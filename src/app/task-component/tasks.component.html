@@ -1,0 +1,43 @@
+<div fxFlexFill fxLayout="column" class="scroll-container" (click)="hideNav($event)" >
+    <div fxLayout="row" class="profile-background" fxLayoutGap="16px">
+        <button matTooltip="Profile" matTooltipPosition="below" fxLayoutAlign="center center"  class="nav-button" (click)="showNav($event)">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div>Your Tasks</div>
+    </div>
+    <div fxLayout="column" class="task-container scroll-container" fxLayoutGap="8px">
+        <div *ngFor="let item of taskList; let i = index" role="button"
+        fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutAlign.lt-sm="center center" fxLayoutAlign.gt-xs="space-evenly start" fxLayoutGap.lt-sm="8px"
+        [ngClass]="{'success': this.completed.get(i)}" 
+        (click)="markAsComplete(i)" 
+        class="task-item">
+            <div fxLayoutAlign="start center" fxLayoutGap="8px">
+                <mat-icon >{{ this.completed.get(i) ? 'check_circle' : 'check_circle_outline' }}</mat-icon>
+                <span>{{item.name}}</span>
+            </div>
+            <div>{{item.description}}</div>
+            <div [ngClass]="this.completed.get(i)? 'complete': 'pending'">{{ this.completed.get(i) ? 'Completed' : 'Pending' }}</div>
+        </div>
+    </div>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="start stretch" class="slide-panel scroll-container" [ngClass]="showSideNav ? 'slide-in': 'slide-out'">
+    <div fxLayout="row" fxLayoutAlign="space-between start" class="profile-background" fxLayoutGap="16px">
+        <div>Task Manager</div>
+        <button matTooltip="Close" fxHide.gt-xs matTooltipPosition="below" fxLayoutAlign="center center" class="nav-button" (click)="hideNav($event)">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="profile-content" fxLayout="column" fxLayoutGap="16px">
+        <div fxLayoutAlign="start center" fxLayoutGap="16px">
+            <img src="../../assets/images/user-profile.jpg" alt="user image"/>
+            <div class="profile-name">{{ userName }}</div>
+        </div>      
+        <mat-list role="list">
+            <mat-list-item role="listitem" fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>view_list</mat-icon>
+                <div>Tasks</div>
+            </mat-list-item>
+        </mat-list>  
+    </div>        
+</div>
