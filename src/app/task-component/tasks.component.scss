@@ -7,27 +7,30 @@
     font-family: monospace;
     font-weight: 600;
     padding: 8px;
-    color: #c66b37;
+    color: gray;
     background-color: lightgray;
     width: 100%;
     
     .task-item {
-        padding: 16px;        
-        border-radius: 20px;
+        padding: 16px;
         cursor: pointer;
         background-color: white;
-        box-shadow: 2px 3px 5px;
         div {
             text-overflow: ellipsis;
             overflow: hidden;
         }
+
+        &:first-child {        
+            border-radius: 20px 20px 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0 20px 20px;
+        }
         
         &:hover {
-            background-color: slategray;
-            color: white;
-            .success {
-                color: white;
-            }
+            box-shadow: -2px 0px 10px grey;
+            top: -2px;
+            position: relative;
         }
     }
     .success {
@@ -82,7 +85,7 @@
     bottom: 0;
     left: 0;
     height: 100%;
-    width: 30%;
+    width: 20%;
     z-index: 1;
     color: #c66b37;
     background-color: #132936;
@@ -93,7 +96,7 @@
         width: 40%;   
     }
     @media screen and (max-width:600px){
-        width: 100%;   
+        width: 80%;   
     }
 }
 
