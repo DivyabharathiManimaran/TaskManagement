@@ -1,6 +1,6 @@
 <div fxFlexFill fxLayout="column" class="scroll-container" (click)="hideNav($event)" >
     <div fxLayout="row" class="profile-background" fxLayoutGap="16px">
-        <button matTooltip="Profile" matTooltipPosition="below" fxLayoutAlign="center center"  class="nav-button" (click)="showNav($event)">
+        <button fxHide.gt-sm matTooltip="Profile" matTooltipPosition="below" fxLayoutAlign="center center"  class="nav-button" (click)="showNav($event)">
             <mat-icon>menu</mat-icon>
         </button>
         <div>Task Manager</div>
