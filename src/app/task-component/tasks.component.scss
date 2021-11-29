@@ -32,6 +32,12 @@
             top: -2px;
             position: relative;
         }
+        @media screen and (min-width:1280px){
+            margin: 0 0 0 20.5%;  
+        }
+        @media (min-width:959px) and (max-width:1280px){
+            margin: 0 0 0 25.5%;
+        }
     }
     .success {
         color: green;
@@ -80,32 +86,41 @@
 
 .slide-panel {
     position: absolute;
-    top: 0;
+    top: 69px;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100%;
+    height: calc(100% - 68px);
     width: 20%;
     z-index: 1;
     color: #c66b37;
     background-color: #132936;
     box-sizing: border-box;
     transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
+    transform: translateX(0);
     @media (min-width:600px) and (max-width:959px){
-        width: 40%;   
+        width: 40%;
+        transform: translateX(-100%);
+
+        .slide-out {
+            transform: translateX(-100%);
+        }
+    }
+    @media (min-width:959px) and (max-width:1280px){
+        width: 25%;
     }
     @media screen and (max-width:600px){
-        width: 80%;   
+        width: 80%;
+        transform: translateX(-100%);
+
+        .slide-out {
+            transform: translateX(-100%);
+        }
     }
 }
 
 .slide-in {
     transform: translateX(0);
-}
-
-.slide-out {
-    transform: translateX(-100%);
 }
 
 .profile-content {

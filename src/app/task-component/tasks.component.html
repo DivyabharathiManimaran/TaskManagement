@@ -3,7 +3,7 @@
         <button matTooltip="Profile" matTooltipPosition="below" fxLayoutAlign="center center"  class="nav-button" (click)="showNav($event)">
             <mat-icon>menu</mat-icon>
         </button>
-        <div>Your Tasks</div>
+        <div>Task Manager</div>
     </div>
     <div fxLayout="column" class="task-container scroll-container" fxLayoutGap="4px">
         <div *ngFor="let item of taskList; let i = index" role="button"
@@ -22,19 +22,19 @@
 </div>
 
 <div fxLayout="column" fxLayoutAlign="start stretch" class="slide-panel scroll-container" [ngClass]="showSideNav ? 'slide-in': 'slide-out'">
-    <div fxLayout="row" fxLayoutAlign="space-between start" class="profile-background" fxLayoutGap="16px">
+    <!-- <div fxLayout="row" fxLayoutAlign="space-between start" class="profile-background" fxLayoutGap="16px">
         <div>Task Manager</div>
         <button matTooltip="Close" fxHide.gt-xs matTooltipPosition="below" fxLayoutAlign="center center" class="nav-button" (click)="hideNav($event)">
             <mat-icon>close</mat-icon>
         </button>
-    </div>
+    </div> -->
     <div class="profile-content" fxLayout="column" fxLayoutGap="16px">
         <div fxLayoutAlign="start center" fxLayoutGap="16px">
             <img src="assets/images/user-profile.jpg" alt="user image"/>
             <div class="profile-name">{{ userName }}</div>
         </div>      
         <mat-list role="list">
-            <mat-list-item role="listitem" fxLayout="row" fxLayoutAlign="start center">
+            <mat-list-item role="listitem" fxLayout="row" fxLayoutAlign="start center" (click)="hideNav($event)">
                 <mat-icon>view_list</mat-icon>
                 <div>Tasks</div>
             </mat-list-item>
