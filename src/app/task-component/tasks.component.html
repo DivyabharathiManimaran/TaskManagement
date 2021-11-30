@@ -5,9 +5,9 @@
         </button>
         <div>Task Manager</div>
     </div>
-    <div fxLayout="column" class="task-container scroll-container" fxLayoutGap="4px">
+    <div fxLayout="column" class="task-container scroll-container">
         <div *ngFor="let item of taskList; let i = index" role="button"
-        fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutAlign.lt-sm="center center" fxLayoutAlign.gt-xs="space-evenly start" fxLayoutGap.lt-sm="8px"
+        fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutAlign.lt-sm="center center" fxLayoutAlign.gt-xs="space-evenly start" fxLayoutGap="0px" fxLayoutGap.lt-sm="8px"
         [ngClass]="{'success': this.completed.get(i)}" 
         (click)="markAsComplete(i)" 
         class="task-item">

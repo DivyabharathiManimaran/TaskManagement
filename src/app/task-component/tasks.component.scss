@@ -6,29 +6,30 @@
     font-size: 20px;
     font-family: monospace;
     font-weight: 600;
-    padding: 8px;
+    padding: 20px;
     color: gray;
-    background-color: lightgray;
+    background-color: lightsteelblue;
     width: 100%;
     
     .task-item {
         padding: 16px;
         cursor: pointer;
         background-color: white;
+        border-bottom: 1px solid lightsteelblue;
+        box-shadow: -5px 5px 10px grey;
         div {
             text-overflow: ellipsis;
             overflow: hidden;
         }
 
         &:first-child {        
-            border-radius: 20px 20px 0 0;
+            border-radius: 10px 10px 0 0;
         }
         &:last-child {
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 10px 10px;
         }
         
         &:hover {
-            box-shadow: -2px 0px 10px grey;
             top: -2px;
             position: relative;
         }
