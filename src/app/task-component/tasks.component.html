@@ -7,7 +7,8 @@
     </div>
     <div fxLayout="column" class="task-container scroll-container">
         <div *ngFor="let item of taskList; let i = index" role="button"
-        fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutAlign.lt-sm="center center" fxLayoutAlign.gt-xs="space-evenly start" fxLayoutGap="0px" fxLayoutGap.lt-sm="8px"
+        fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutAlign.lt-sm="center center" 
+        fxLayoutAlign.gt-xs="space-evenly start" fxLayoutGap="0px" fxLayoutGap.lt-sm="8px"
         [ngClass]="{'success': this.completed.get(i)}" 
         (click)="markAsComplete(i)" 
         class="task-item">
@@ -22,12 +23,6 @@
 </div>
 
 <div fxLayout="column" fxLayoutAlign="start stretch" class="slide-panel scroll-container" [ngClass]="showSideNav ? 'slide-in': 'slide-out'">
-    <!-- <div fxLayout="row" fxLayoutAlign="space-between start" class="profile-background" fxLayoutGap="16px">
-        <div>Task Manager</div>
-        <button matTooltip="Close" fxHide.gt-xs matTooltipPosition="below" fxLayoutAlign="center center" class="nav-button" (click)="hideNav($event)">
-            <mat-icon>close</mat-icon>
-        </button>
-    </div> -->
     <div class="profile-content" fxLayout="column" fxLayoutGap="16px">
         <div fxLayoutAlign="start center" fxLayoutGap="16px">
             <img src="assets/images/user-profile.jpg" alt="user image"/>
