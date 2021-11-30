@@ -52,7 +52,8 @@
     border-radius: 5px;    
     font-size: 12px;
     padding: 4px 8px;    
-    width: fit-content;
+    text-align: center;
+    width: 76px;
 }
 
 .pending {
@@ -61,7 +62,8 @@
     border-radius: 5px;
     font-size: 12px;
     padding: 4px 8px;
-    width: fit-content;
+    text-align: center;
+    width: 76px;
 }
 
 .profile-background {
@@ -79,15 +81,12 @@
         cursor: pointer;
         border-radius: 50%;
         padding: 4px;
-        &:hover {
-            background-color: slategray;
-        }
     }
 }
 
 .slide-panel {
     position: absolute;
-    top: 68px;    
+    top: 69px;    
     border-top: 1px solid gray;
     right: 0;
     bottom: 0;
